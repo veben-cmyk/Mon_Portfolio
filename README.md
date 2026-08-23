@@ -15,7 +15,7 @@ Ce site a été bâti avec une approche **Mobile First** et une architecture **G
 
 ![Aperçu du portfolio](images/preview.png)
 
-## 📄 Pages incluses
+## Pages incluses
 
 - **Accueil** — une introduction dynamique présentant mon profil et mes objectifs
 - **À propos** — le récit de mon parcours, de la précision du dessin au crayon à la logique du code
@@ -23,7 +23,7 @@ Ce site a été bâti avec une approche **Mobile First** et une architecture **G
 - **CV** — un résumé détaillé de mes compétences techniques, de mes qualités (discipline, autonomie...) et de mes projets, avec téléchargement en PDF
 - **Contact** — un point d'entrée direct pour les collaborations, avec formulaire dédié et mes réseaux sociaux
 
-## 🛠️ Stack technique
+## Stack technique
 
 - **Structure** : HTML5 sémantique pour un SEO et une accessibilité optimisés
 - **Style** : Tailwind CSS pour une interface moderne, rapide et entièrement responsive
@@ -31,7 +31,7 @@ Ce site a été bâti avec une approche **Mobile First** et une architecture **G
 - **Design** : conception de maquette haute fidélité sur Figma
 - **Versionnage** : utilisation stricte de Gitflow (branches `main`, `develop` et `feature/*`)
 
-## ✨ Fonctionnalités clés
+## Fonctionnalités clés
 
 - Design responsive : adaptation sur tous les écrans (mobile, tablette, desktop)
 - Mode sombre / clair avec mémorisation de la préférence (localStorage)
@@ -54,7 +54,7 @@ portfolio/
 └── README.md
 ```
 
-## 🚀 Lancer le projet en local
+## Lancer le projet en local
 
 Aucune installation ni dépendance requise : le projet est un ensemble de pages statiques.
 
@@ -65,7 +65,7 @@ Aucune installation ni dépendance requise : le projet est un ensemble de pages 
    ```
 2. Ouvre `index.html` dans ton navigateur, ou utilise une extension type *Live Server* (VS Code) pour le rechargement automatique.
 
-## 🌱 Workflow Git (Gitflow)
+##  Workflow Git (Gitflow)
 
 | Branche | Rôle |
 |---|---|
@@ -76,21 +76,20 @@ Aucune installation ni dépendance requise : le projet est un ensemble de pages 
 
 Convention de commit : [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `style:`, `docs:`, `refactor:`...).
 
-## 🗺️ Pistes d'amélioration
+## Pistes d'amélioration
 
 - [ ] Formulaire de contact fonctionnel (envoi réel des messages)
 - [ ] Filtrage/recherche dans la galerie de projets
 - [ ] Version anglaise du site
-- [ ] Optimisation des images (formats WebP, lazy loading)
 
 ## 👤 Auteur
 
 **Veben Isaac**
 - Email : ciceronvben@gmail.com
 - GitHub : [@veben-cmyk](https://github.com/veben-cmyk)
-- LinkedIn : [Veben Isaac](https://www.linkedin.com/in/jaden-vben-6ab4093a9/)
-- Instagram : [@jadenisaac_10](https://www.instagram.com/jadenisaac_10/?hl=en)
+- LinkedIn : [Isaac Veben](https://www.linkedin.com/in/jaden-vben-6ab4093a9/)
 
-## 📄 Licence
+
+## Licence
 
 Ce projet est sous licence MIT — voir le fichier [LICENSE](LICENSE) pour plus de détails.
