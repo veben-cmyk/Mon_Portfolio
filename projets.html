@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veben Isaac - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'selector'
+        }
+    </script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-slate-950 dark:text-gray-100 transition-colors duration-300">
+
+    <header class="fixed top-0 w-screen z-50  ">
+    <div class="flex items-center justify-between bg-gray-200/80 backdrop-blur-md p-3 dark:bg-gray-900/80 backdr">
+        <a href="index.html" class="text-xl font-bold text-blue-700 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-400">Veben Isaac</a>
+
+            <nav class="hidden md:flex gap-8 text-sm items-center px-4">
+                <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Accueil</a>
+                <a href="apropos.html" class="hover:text-blue-600 dark:hover:text-blue-400">à propos</a>
+                <a href="CV.html" class="hover:text-blue-600 dark:hover:text-blue-400">Cv</a>
+                <a href="projets.html" class="hover:text-blue-600 dark:hover:text-blue-400">Projets</a>
+                <a href="Contact.html" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+                
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 hover:scale-110 transition">
+                    <span id="theme-toggle-icon">🌙</span>
+                </button>
+            </nav>
+
+    <div class="flex items-center gap-4 md:hidden">
+        <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800">
+            <span id="theme-toggle-icon-mobile">🌙</span>
+        </button>
+        <button id="menu-btn" class="text-3xl text-black dark:text-white">
+            ☰
+        </button>
+    </div>
+
+    </header>
+
+    <div id="mobile-menu" class="hidden flex flex-col items-center gap-6 py-6 bg-gray-100 dark:bg-slate-900 md:hidden  fixed top-0 w-screen z-50">
+        <a href="index.html" class="dark:text-white">Accueil</a>
+        <a href="apropos.html" class="dark:text-white">À propos</a>
+        <a href="CV.html" class="dark:text-white">CV</a>
+        <a href="projets.html" class="dark:text-white">Projets</a>
+        <a href="Contact.html" class="dark:text-white">Contact</a>
+    </div>
+
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+
+    <h2 class="text-3xl font-bold text-center mb-12 dark:text-blue-400">Mes projets</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="bg-blue-100 dark:bg-slate-900 shadow rounded overflow-hidden hover:scale-105 transition border border-transparent dark:border-slate-800">
+
+        <img src="images/sunnyside.png" class="w-full h-48 object-cover hover:scale-105 transition dark:opacity-80">
+
+        <div class="p-4">
+        <h3 class="font-bold text-lg dark:text-blue-300">SunnySide</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Landing Page</p>
+
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            Landing page moderne avec design responsive réalisée avec html et css.
+        </p>
+
+        <div class="flex gap-3">
+        <a href="https://veben-cmyk.github.io/SunnySide-landing-page/" class="text-sm bg-black dark:bg-blue-600 text-white px-3 py-1 rounded" target="_blank">
+            Voir
+        </a>
+        <a href="https://github.com/veben-cmyk/SunnySide-landing-page" class=" bg-white dark:bg-slate-800 dark:text-white dark:border-slate-700 text-sm border px-3 py-1 rounded" target="_blank">
+            Github
+        </a>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="bg-blue-100 dark:bg-slate-900 shadow rounded overflow-hidden hover:scale-105 transition border border-transparent dark:border-slate-800">
+
+        <img src="images/projet burger.png" class="w-full h-48 object-cover hover:scale-105 transition dark:opacity-80">
+
+        <div class="p-4">
+        <h3 class="font-bold text-lg dark:text-blue-300">Burger Website</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Site vitrine</p>
+
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            Site vitrine pour restaurant avec interface simple et attrayante realisé avec Tailwind css.
+        </p>
+
+        <div class="flex gap-3">
+            <a href="https://veben-cmyk.github.io/Burger-site/" class="text-sm bg-black dark:bg-blue-600 text-white px-3 py-1 rounded" target="_blank">
+            Voir
+            </a>
+            <a href="https://github.com/veben-cmyk/Burger-site" class="bg-white dark:bg-slate-800 dark:text-white dark:border-slate-700 text-sm border px-3 py-1 rounded" target="_blank">
+            Github
+            </a>
+        </div>
+        </div>
+
+    </div>
+
+    <div class="bg-blue-100 dark:bg-slate-900 shadow rounded overflow-hidden hover:scale-105 transition border border-transparent dark:border-slate-800">
+
+        <img src="images/projet café.png" class="w-full h-48 object-cover hover:scale-105 transition dark:opacity-80">
+
+        <div class="p-4">
+        <h3 class="font-bold text-lg dark:text-blue-300">Coffee Shop</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Site vitrine</p>
+
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            Site moderne pour café avec design élégant et responsive réalié avec html et css.
+        </p>
+
+        <div class="flex gap-3">
+            <a href="https://veben-cmyk.github.io/coffee-shop/" class="text-sm bg-black dark:bg-blue-600 text-white px-3 py-1 rounded">
+            Voir
+            </a>
+            <a href="https://github.com/veben-cmyk/coffee-shop" class="bg-white dark:bg-slate-800 dark:text-white dark:border-slate-700 border px-3 py-1 rounded">
+            Github
+            </a>
+        </div>
+        </div>
+
+    </div>
+
+    </div>
+
+</section>
+
+<div class="flex justify-center ">
+        <a href="contact.html">  
+            <button class="bg-blue-600 py-3 px-6 rounded-lg shadow-lg text-white hover:scale-110 transition hover:bg-blue-900 animate-bounce">
+                contactez-moi
+            </button>
+        </a> 
+        </div>
+
+    <footer class="bg-blue-900 dark:bg-black text-gray-300 mt-20 transition-colors">
+        <div class="max-w-6xl mx-auto px-6 py-10">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center">
+                    <h2 class="text-white text-xl font-bold">Veben Isaac.</h2>
+                    <p class="mt-3 text-sm text-gray-400">
+                    Développeur frontend passionné par la création d'expériences web modernes et performantes.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <h3 class="text-white font-semibold mb-3">Navigation</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="apropos.html" class="hover:text-white transition">à propos</a></li>
+                        <li><a href="CV.html" class="hover:text-white transition">Cv</a></li>
+                        <li><a href="projets.html" class="hover:text-white transition">Projets</a></li>
+                        <li><a href="Contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <h3 class="text-white font-semibold mb-3">Me contacter</h3>
+                    <ul class="flex flex-row gap-4 text-sm">
+                        <li>
+                            <a href="https://www.instagram.com/jadenisaac_10/?hl=en" target="_blank">
+                                <img src="images/instagram (3).png" alt="Instagram" class="w-6 h-6 hover:scale-110 transition dark:invert">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/veben-cmyk" target="_blank">
+                                <img src="images/social (1).png" alt="Github" class="w-6 h-6 hover:scale-110 transition dark:invert"> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/jaden-vben-6ab4093a9/" target="_blank">
+                                <img src="images/linkedin (1).png" alt="linkedin" class="w-6 h-6 hover:scale-110 transition dark:invert">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/243823440672" target="_blank">
+                                <img src="images/whatsapp (2).png" alt="whatsapp"  class="w-6 h-6 hover:scale-110 transition dark:invert">
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
+                © 2026 by Veben Isaac 
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Floating Action button -->
+
+    <div class="fixed bottom-6 right-6 flex flex-col items-end space-y-4">
+
+        <div id="contactMenu" class="flex flex-col space-y-3 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none">
+            <a href="#" class="p-3 bg-white border border-red-600 text-red-600 rounded-full shadow-lg hover:scale-110 transition-transform hover:bg-red-600 hover:text-white">
+                <i class="fab fa-linkedin-in">email ✉️</i>
+            </a>
+            <a href="https://wa.me/243823440672" class="p-3 bg-white border border-green-600 text-green-600 rounded-full shadow-lg hover:scale-110 transition-transform hover:bg-green-600 hover:text-white">
+                <i class="fab fa-whatsapp">whatsapp</i>
+            </a>
+        
+            <a href="#" class="p-3 bg-white border border-blue-500 text-blue-600 rounded-full shadow-lg hover:scale-110 transition-transform hover:bg-blue-600 hover:text-white">
+                <i class="fab fa-appel">appeler 📞</i>
+            </a>
+        </div>
+
+        <button id="toggleBtn" class="flex items-center space-x-2 bg-white border border-black px-6 py-3 rounded-full shadow-xl active:scale-95 transition-all animate-pulse">
+            <span class="font-medium text-black ">Me contacter</span>
+            <span id="btnIcon" class="text-lg"></span>
+        </button>
+
+    </div>
+
+    <script>
+        // Toggle les classes d'affichage
+            const btn = document.getElementById('toggleBtn');
+            const menu = document.getElementById('contactMenu');
+            const icon = document.getElementById('btnIcon');
+
+            btn.addEventListener('click', () => {
+            // Toggle les classes d'affichage
+            menu.classList.toggle('opacity-0');
+            menu.classList.toggle('translate-y-10');
+            menu.classList.toggle('pointer-events-none');
+    
+            // Petit bonus : on change l'icône ou on fait tourner l'élément au clic
+            btn.classList.toggle('rotate-3');
+            });
+    </script>
+
+
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // --- MENU BURGER ---
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        // --- DARK MODE LOGIC ---
+        const html = document.documentElement;
+        const toggleBtns = [document.getElementById("theme-toggle"), document.getElementById("theme-toggle-mobile")];
+        const icons = [document.getElementById("theme-toggle-icon"), document.getElementById("theme-toggle-icon-mobile")];
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            icons.forEach(icon => icon.innerText = '☀️');
+        }
+
+        toggleBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                html.classList.toggle("dark");
+                if (html.classList.contains("dark")) {
+                    localStorage.setItem('theme', 'dark');
+                    icons.forEach(icon => icon.innerText = '☀️');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    icons.forEach(icon => icon.innerText = '🌙');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
