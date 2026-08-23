@@ -1,6 +1,6 @@
 # Portfolio professionnel — Veben Isaac
 
-🔗 **[Voir le site en direct](https://incandescent-banoffee-32adb2.netlify.app/)**
+🔗 **[Voir le site en direct](https://veben-cmyk.github.io/Mon_Portfolio/)**
 
 ![Statut](https://img.shields.io/badge/statut-termin%C3%A9-brightgreen)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
