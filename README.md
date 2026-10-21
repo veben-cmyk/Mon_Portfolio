@@ -74,7 +74,7 @@ Aucune installation ni dépendance requise : le projet est un ensemble de pages 
 | `feature/*` | Une branche par page/fonctionnalité (ex: `feature/cv-page`) |
 | `fix/*` | Correction de bug isolée |
 
-Convention de commit : [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `style:`, `docs:`, `refactor:`...).
+
 
 ## Pistes d'amélioration
 
