@@ -713,24 +713,20 @@
 
       <div class="grid md:grid-cols-2 gap-10">
         <!-- Formulaire -->
-        <form class="space-y-6">
+        <form method="post" action="https://formspree.io/f/mdearlqe" class="space-y-6">
           <input
             type="text"
-            placeholder="Ton nom"
-            class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
+            placeholder="Ton nom" name="nom"
+            class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
 
           <input
             type="email"
-            placeholder="Ton email"
-            class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
+            placeholder="Ton email" name="email"
+            class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
 
-          <textarea placeholder="Ton message" rows="5" class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+          <textarea placeholder="Ton message" name="message" rows="5" class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 required"></textarea>
 
-          <button
-            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-800 transition w-full"
-          >
+          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-800 transition w-full">
             Envoyer
           </button>
         </form>
