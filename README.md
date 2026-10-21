@@ -85,7 +85,7 @@ Convention de commit : [Conventional Commits](https://www.conventionalcommits.or
 ## 👤 Auteur
 
 **Veben Isaac**
-- Email : ciceronvben@gmail.com
+- Email : isaacveben2001@gmail.com
 - GitHub : [@veben-cmyk](https://github.com/veben-cmyk)
 - LinkedIn : [Isaac Veben](https://www.linkedin.com/in/isaac-veben-6ab4093a9/)
 
