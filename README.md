@@ -13,7 +13,7 @@ Ce site a été bâti avec une approche **Mobile First** et une architecture **G
 
 ## 🖼️ Aperçu
 
-![Aperçu du portfolio](images/preview.pngex
+![Aperçu du portfolio](images/preview.png)
 
 ## Pages incluses
 
