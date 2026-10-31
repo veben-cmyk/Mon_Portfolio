@@ -1,0 +1,26 @@
+{
+  "name": "mon_portfolio",
+  "version": "1.0.0",
+  "description": "🔗 **[Voir le site en direct](https://veben-cmyk.github.io/Mon_Portfolio/)**",
+  "main": "index.js",
+  "scripts": {
+  "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./css/style.css --watch",
+  "build": "npx @tailwindcss/cli -i ./src/input.css -o ./css/style.css --minify"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veben-cmyk/Mon_Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/veben-cmyk/Mon_Portfolio/issues"
+  },
+  "homepage": "https://github.com/veben-cmyk/Mon_Portfolio#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

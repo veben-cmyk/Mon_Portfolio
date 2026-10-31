@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Active les classes dark: quand <html> a la classe "dark" */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-page: #ffffff;        /* NOUVEAU : le fond de la page */
+  --color-ink: #1d1d1f;
+  --color-muted: #6e6e73;
+  --color-line: #d2d2d7;
+  --color-surface: #f5f5f7;
+  --color-accent: #0066cc;      /* liens et textes bleus */
+  --color-accent-fill: #0066cc; /* NOUVEAU : fond des boutons pleins */
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3.25rem;
+  }
+
+  /* LE MODE SOMBRE : on change seulement la valeur des variables.
+     Toutes les classes qui les utilisent (text-ink, bg-surface...) suivent toutes seules. */
+  html.dark {
+    color-scheme: dark;
+    --color-page: #000000;
+    --color-ink: #f5f5f7;
+    --color-muted: #a1a1a6;
+    --color-line: #424245;
+    --color-surface: #1d1d1f;
+    --color-accent: #2997ff;
+    --color-accent-fill: #0071e3;
+  }
+}
+
+@utility survol-bleu {
+  @apply ring-1 ring-transparent transition duration-200;
+
+  &:hover {
+    @apply bg-accent/10 text-accent ring-accent;
+  }
+}
+
+/* APPARITION AU SCROLL : l'élément démarre invisible et 24 px plus bas.
+   ".js" : on ne cache rien si le JavaScript ne s'est pas chargé. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Pour les personnes qui ont désactivé les animations dans leur système */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
