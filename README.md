@@ -1,95 +1,95 @@
-# Portfolio professionnel — Veben Isaac
+# Portfolio — Isaac Veben
 
-🔗 **[Voir le site en direct](https://veben-cmyk.github.io/Mon_Portfolio/)**
+Portfolio de développeur web fullstack junior, au design minimaliste inspiré d'Apple.
 
-![Statut](https://img.shields.io/badge/statut-termin%C3%A9-brightgreen)
+**[Voir le site en ligne](https://veben-cmyk.github.io/Mon_Portfolio/)**
+
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)
+![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-Bienvenue sur le dépôt de mon portfolio.
+![Aperçu du portfolio](images/captureReadme.png)
 
-Ce site a été bâti avec une approche **Mobile First** et une architecture **Git Flow** rigoureuse pour garantir une qualité de code professionnelle.
+## Contenu
 
-## 🖼️ Aperçu
+Un site d'une seule page, découpé en sections :
 
-![Aperçu du portfolio](images/preview.png)
+- **Accueil** : présentation et accès direct aux projets et aux réseaux
+- **Projet phare** : Kadea Chat, messagerie fullstack en temps réel
+- **Autres projets** : clone de YouTube, site vitrine Coffee Shop
+- **Dessins** : une sélection de portraits au crayon
+- **Boîte à outils** : compétences front-end, back-end et outils
+- **Parcours** : formation et expériences, avec le CV en PDF
+- **Contact** : formulaire et moyens de contact directs
 
-## Pages incluses
+## Fonctionnalités
 
-- **Accueil** — une introduction dynamique présentant mon profil et mes objectifs
-- **À propos** — le récit de mon parcours, de la précision du dessin au crayon à la logique du code
-- **Projets** — une galerie de mes réalisations web (SunnySide, Burger Website, Coffee Shop)
-- **CV** — un résumé détaillé de mes compétences techniques, de mes qualités (discipline, autonomie...) et de mes projets, avec téléchargement en PDF
-- **Contact** — un point d'entrée direct pour les collaborations, avec formulaire dédié et mes réseaux sociaux
+- Design responsive, pensé d'abord pour le mobile
+- Mode clair et sombre, qui suit le réglage du système et mémorise le choix du visiteur
+- Apparitions au scroll avec `IntersectionObserver`, désactivées si le visiteur a réduit les animations dans son système
+- Effets de survol cohérents sur tout le site
+- Formulaire de contact fonctionnel via Formspree
+- Images compressées et chargées à la demande (`loading="lazy"`)
 
-## Stack technique
+## Choix techniques
 
-- **Structure** : HTML5 sémantique pour un SEO et une accessibilité optimisés
-- **Style** : Tailwind CSS pour une interface moderne, rapide et entièrement responsive
-- **Interactivité** : JavaScript pour la gestion du menu mobile, du mode sombre et des animations fluides
-- **Design** : conception de maquette haute fidélité sur Figma
-- **Versionnage** : utilisation stricte de Gitflow (branches `main`, `develop` et `feature/*`)
+- **Tailwind CSS v4 compilé** : un système de design centralisé dans `@theme` (couleurs, polices). Le mode sombre redéfinit uniquement la valeur de ces variables.
+- **Contenu piloté par les données** : les projets, compétences, étapes du parcours, réseaux et dessins sont des tableaux d'objets, affichés par des fonctions composants en JavaScript. Ajouter un projet revient à ajouter un objet.
+- **HTML sémantique et accessible** : hiérarchie des titres, listes, `<figure>`, labels de formulaire, `aria-label` sur les boutons-icônes.
 
-## Fonctionnalités clés
-
-- Design responsive : adaptation sur tous les écrans (mobile, tablette, desktop)
-- Mode sombre / clair avec mémorisation de la préférence (localStorage)
-- Bouton d'action flottant pour contacter rapidement (email, WhatsApp, appel)
-- Transitions et effets de survol (hover) pour une expérience utilisateur soignée
-- Historique de commits granulaire montrant l'évolution étape par étape du projet
-
-## 📁 Structure du projet
+## Structure du projet
 
 ```
-portfolio/
-├── index.html         # Accueil
-├── apropos.html       # À propos
-├── CV.html             # CV interactif + PDF téléchargeable
-├── projets.html        # Galerie de projets
-├── Contact.html         # Formulaire de contact
-├── images/              # Photos, icônes, miniatures de projets
-├── documents/            # CV au format PDF
-├── LICENSE
-└── README.md
+Mon_Portfolio/
+├── index.html        # Structure de la page
+├── src/input.css     # Système de design (tokens, mode sombre, effets)
+├── css/style.css     # CSS généré par Tailwind (ne pas modifier à la main)
+├── js/main.js        # Données, composants et interactions
+├── images/           # Photo, captures de projets, dessins
+├── documents/        # CV au format PDF
+└── package.json      # Scripts de compilation
 ```
 
 ## Lancer le projet en local
 
-Aucune installation ni dépendance requise : le projet est un ensemble de pages statiques.
+Prérequis : [Node.js](https://nodejs.org/).
 
-1. Clone le dépôt
-   ```bash
-   git clone https://github.com/veben-cmyk/portfolio.git
-   cd portfolio
-   ```
-2. Ouvre `index.html` dans ton navigateur, ou utilise une extension type *Live Server* (VS Code) pour le rechargement automatique.
+```bash
+git clone https://github.com/veben-cmyk/Mon_Portfolio.git
+cd Mon_Portfolio
+npm install
+npm run dev
+```
 
-##  Workflow Git (Gitflow)
+Ouvre ensuite `index.html` avec une extension comme Live Server (VS Code). Tant que `npm run dev` tourne, le CSS est régénéré à chaque sauvegarde.
 
-| Branche | Rôle |
-|---|---|
-| `main` | Code stable, en ligne |
-| `develop` | Branche d'intégration des nouvelles fonctionnalités |
-| `feature/*` | Une branche par page/fonctionnalité (ex: `feature/cv-page`) |
-| `fix/*` | Correction de bug isolée |
+Avant de publier :
 
+```bash
+npm run build
+```
 
+Cette commande génère une version compressée de `css/style.css`. Le site est publié automatiquement par GitHub Pages à partir de la branche `main`.
+
+## Versions
+
+- **v2** (actuelle) : refonte complète en one-page, style minimaliste
+- **v1** : première version multipage, conservée sous le tag `v1-ancien-design`
 
 ## Pistes d'amélioration
 
-- [ ] Formulaire de contact fonctionnel (envoi réel des messages)
-- [ ] Filtrage/recherche dans la galerie de projets
 - [ ] Version anglaise du site
+- [ ] Filtre des projets par technologie
+- [ ] Page détaillée pour Kadea Chat (étude de cas)
 
-## 👤 Auteur
+## Auteur
 
-**Veben Isaac**
-- Email : isaacveben2001@gmail.com
+**Isaac Veben**, développeur web fullstack junior à Kinshasa
+
+- E-mail : isaacveben2001@gmail.com
 - GitHub : [@veben-cmyk](https://github.com/veben-cmyk)
 - LinkedIn : [Isaac Veben](https://www.linkedin.com/in/isaac-veben-6ab4093a9/)
 
-
 ## Licence
 
-Ce projet est sous licence MIT — voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE).
