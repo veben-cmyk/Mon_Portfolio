@@ -1,564 +1,286 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Isaac Veben - Développeur web fullstack</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Isaac Veben · Développeur web fullstack</title>
+    <meta name="description" content="Portfolio d'Isaac Veben, développeur web fullstack junior à Kinshasa." />
+
+    <!-- Les deux polices de Kadea Chat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet" />
+
     <script>
-      // CONFIGURATION TAILWIND : on active le mode sombre par classe
-      tailwind.config = {
-        darkMode: "selector",
-      };
+        // S'exécute avant l'affichage de la page, pour éviter un flash blanc en mode sombre
+        document.documentElement.classList.add("js");
+        const themeChoisi = localStorage.getItem("theme");
+        const systemeSombre = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (themeChoisi === "dark" || (!themeChoisi && systemeSombre)) {
+            document.documentElement.classList.add("dark");
+        }
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+
+    <!-- Notre CSS compilé par Tailwind -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body
-    class="bg-white text-gray-900 dark:bg-slate-950 dark:text-gray-100 transition-colors duration-300">
-    <!-- ================= HEADER ================= -->
-    <header class="fixed top-0 w-screen z-50">
-      <div
-        class="flex items-center justify-between bg-gray-200/80 backdrop-blur-md p-3 dark:bg-gray-900/80">
-        <!-- Le logo ramène en haut de la page (#accueil) -->
-        <a
-          href="#accueil"
-          class="text-xl font-bold text-blue-700 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-400">
-          Isaac Veben
-        </a>
+    <body class="bg-page font-sans text-ink antialiased">
+        <!-- ================= HEADER ================= -->
+        <header class="sticky top-0 z-50 border-b border-line bg-page/80 backdrop-blur-md">
+            <nav aria-label="Navigation principale"
+                    class="mx-auto flex h-13 max-w-[980px] items-center justify-between px-5">
+                <a href="#accueil" class="font-display text-lg font-semibold tracking-tight">
+                    Isaac Veben
+                </a>
 
-        <!-- NAVIGATION ONE-PAGE :
-            chaque lien pointe vers l'id d'une section de CETTE page (#...)
-            au lieu d'ouvrir un autre fichier .html.
-            Grâce à "scroll-smooth" sur <html>, le défilement est fluide. -->
-        <nav class="hidden md:flex gap-8 text-sm items-center px-4">
-          <a href="#accueil" class="hover:text-blue-600 dark:hover:text-blue-400">Accueil</a>
-          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">À propos</a>
-          <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projets</a>
-          <a href="#cv" class="hover:text-blue-600 dark:hover:text-blue-400">CV</a>
-          <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+                <ul class="flex items-center gap-6 text-sm">
+                    <li><a href="#projets" class="text-ink/70 transition-colors hover:text-ink">Projets</a></li>
+                    <li><a href="#parcours" class="text-ink/70 transition-colors hover:text-ink">Parcours</a></li>
+                    <li><a href="#contact" class="text-ink/70 transition-colors hover:text-ink">Contact</a></li>
+                    <li>
+  <button id="bouton-theme" type="button" aria-label="Changer de thème"
+          class="survol-bleu flex size-9 cursor-pointer items-center justify-center rounded-full text-ink/70">
+    <!-- Lune : visible en mode clair -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+         stroke-linejoin="round" aria-hidden="true" class="size-4.5 dark:hidden">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+    <!-- Soleil : visible en mode sombre -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+         stroke-linejoin="round" aria-hidden="true" class="hidden size-4.5 dark:block">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  </button>
+</li>
+                </ul>
+            </nav>
+        </header>
 
-          <button
-            id="theme-toggle"
-            class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 hover:scale-110 transition">
-            <span id="theme-toggle-icon">🌙</span>
-          </button>
-        </nav>
+    <main>
+        <!-- ================= ACCUEIL ================= -->
+        <section id="accueil"
+                class="mx-auto flex max-w-[980px] flex-col items-center px-5 pt-28 pb-32 text-center">
 
-        <div class="flex items-center gap-4 md:hidden">
-          <button
-            id="theme-toggle-mobile"
-            class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800">
-            <span id="theme-toggle-icon-mobile">🌙</span>
-          </button>
-          <button id="menu-btn" class="text-3xl text-black dark:text-white">☰</button>
+        <img src="images/jadenV.JPG" alt="Portrait d'Isaac Veben"
+            width="120" height="120"
+            class="size-30 rounded-full object-cover reveal"/>
+
+        <p class="mt-8 text-lg font-bold text-muted">
+            Développeur web fullstack · Kinshasa
+        </p>
+
+        <h1 class="mt-3 font-display text-5xl font-bold leading-none tracking-tight sm:text-7xl md:text-8xl">
+            Du crayon au code.
+        </h1>
+
+        <p class="mt-6 max-w-xl text-xl leading-snug text-muted sm:text-2xl">
+            Je conçois et je construis des applications web claires, rapides et soignées,
+            avec l'œil de quelqu'un qui dessine depuis toujours.
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+            <a href="#projets"
+            class="inline-flex h-11 items-center rounded-full bg-accent px-6 text-lg text-white transition-colors hover:bg-accent/90">
+            Voir mes projets
+            </a>
+            <a href="#contact" class="py-3 text-lg text-accent hover:underline">
+            Me contacter ›
+            </a>
         </div>
-      </div>
-    </header>
+        <ul data-reseaux="github,linkedin,whatsapp" class="mt-8 flex gap-3"></ul>
+        </section> 
 
-    <!-- Menu mobile
-          "top-14" (au lieu de top-0) : le menu s'ouvre SOUS le header fixe,
-          sinon le header cachait les premiers liens. -->
-    <div
-      id="mobile-menu"
-      class="hidden flex flex-col items-center gap-6 py-6 bg-gray-100 dark:bg-slate-900 z-40 md:hidden fixed top-14 w-screen shadow-lg">
-      <a href="#accueil" class="hover:text-blue-600 dark:hover:text-blue-400">Accueil</a>
-      <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">À propos</a>
-      <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projets</a>
-      <a href="#cv" class="hover:text-blue-600 dark:hover:text-blue-400">CV</a>
-      <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-    </div>
+        <!-- ================= PROJET PHARE ================= -->
+        <section id="projets" class="bg-surface px-5 py-28">
+            <div class="mx-auto flex max-w-[980px] flex-col items-center text-center">
 
-    <!-- ================= ACCUEIL ================= -->
-    <!-- id="accueil" : la cible du lien "Accueil" du menu.
-          "scroll-mt-20" (sur chaque section) : laisse une marge en haut
-          quand on arrive sur la section, pour que le header fixe ne cache pas le titre. -->
-    <section
-      id="accueil"
-      class="scroll-mt-20 max-w-6xl mx-auto px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-12 mt-10">
-      <div class="flex-1 text-center md:text-left">
-        <h2
-          class="text-3xl md:text-6xl font-bold leading-tight text-blue-600 dark:text-blue-400">
-          Je construis des <br/>
-          expériences web modernes.
+                <p class="text-lg font-bold text-accent">Projet phare</p>
+
+                <h2 class="mt-2 font-display text-5xl font-bold leading-tight tracking-tight sm:text-7xl reveal">
+                Kadea Chat.
+                </h2>
+
+                <p class="mt-4 max-w-2xl text-xl leading-snug text-muted sm:text-2xl">
+                Une messagerie en temps réel, construite de la base de données jusqu'au déploiement.
+                </p>
+
+                <div class="mt-6 flex flex-wrap justify-center gap-x-7 gap-y-2 text-lg">
+                <a href="https://two6-01-kd-dev-web-matin-c-mon-thu-kin-nfr5.onrender.com"
+                    target="_blank" rel="noopener noreferrer"
+                    class="py-2 text-accent hover:underline">Voir le site ›</a>
+                <a href="https://github.com/veben-cmyk/kadea-chat_fullstack"
+                    target="_blank" rel="noopener noreferrer"
+                    class="py-2 text-accent hover:underline">Voir le code ›</a>
+                </div>
+
+                <img src="images/accueil.png" alt="Page d'accueil de Kadea Chat"
+                    width="1800" height="1235" loading="lazy"
+                    class="mt-14 w-full rounded-3xl shadow-2xl shadow-black/15 ring-1 ring-black/5 transition duration-500 hover:scale-105 reveal"/>
+
+                <div class="mt-14 grid w-full gap-10 text-left sm:grid-cols-3">
+                    <div>
+                        <h3 class="text-xl font-bold">Temps réel</h3>
+                        <p class="mt-2 text-lg leading-relaxed text-muted reveal">
+                        Les conversations et les messages s'affichent en direct, sans recharger la page.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Comptes sécurisés</h3>
+                        <p class="mt-2 text-lg leading-relaxed text-muted reveal">
+                        Inscription avec e-mail de confirmation, connexion et profil modifiable.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Stack complète</h3>
+                        <p class="mt-2 text-lg leading-relaxed text-muted">
+                        AdonisJS, PostgreSQL, Tailwind CSS, Brevo pour les e-mails, déployé sur Render.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    <!-- ================= AUTRES PROJETS ================= -->
+    <section class="px-5 py-28">
+        <div class="mx-auto max-w-[980px]">
+            <h2 class="text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
+            Autres projets.
+            </h2>
+
+            <!-- Les cartes sont générées par js/main.js à partir du tableau "projets" -->
+            <div id="liste-projets" class="mt-14 grid gap-6 md:grid-cols-2"></div>
+        </div>
+    </section>
+
+        <!-- ================= PHRASE D'ARTISTE ================= -->
+    <section class="bg-black px-5 py-32 text-white">
+        <div class="mx-auto max-w-3xl text-center">
+            <p class="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            Le dessin m'a appris à regarder.<br class="hidden sm:block" />
+            Le code me permet de construire.
+            </p>
+            <p class="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/65 sm:text-xl">
+            Portraitiste au crayon depuis 2020, puis vendeur et poseur en décoration d'intérieur,
+            j'ai appris le sens du détail et l'écoute du client bien avant d'écrire ma première
+            ligne de code. Aujourd'hui, je mets ce regard au service d'interfaces simples et efficaces.
+            </p>
+        </div>
+        <ul id="liste-dessins" class="mt-16 grid items-start gap-8 sm:grid-cols-3"></ul>
+    </section>
+
+        <!-- ================= BOÎTE À OUTILS ================= -->
+    <section class="px-5 py-28">
+    <div class="mx-auto max-w-[980px]">
+        <h2 class="text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
+        Ma boîte à outils.
         </h2>
-        <p class="mt-6 text-gray-600 dark:text-gray-400 max-w-md mx-auto md:mx-0">
-          Je suis
-          <span class="font-bold text-blue-600 dark:text-blue-400">Isaac Veben</span>,
-          développeur fullstack. <br />
-          Je transforme des idées en interfaces propres, <br/>
-          rapides et efficaces.
-        </p>
 
-        <div class="mt-8 flex justify-center md:justify-start gap-4 items-center">
-          <a href="#contact"
-            class="bg-blue-600 py-3 px-6 rounded-lg shadow-lg text-white hover:scale-110 transition hover:bg-blue-900">
-            Contactez-moi
-          </a>
-
-          <ul class="flex flex-row gap-4 text-sm">
-            <li>
-              <a href="https://github.com/veben-cmyk" target="_blank" rel="noopener noreferrer">
-                <img src="images/github.png" alt="GitHub" class="w-6 h-6 hover:scale-110 transition dark:invert"/>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/isaac-veben-6ab4093a9/" target="_blank" rel="noopener noreferrer">
-                <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6 hover:scale-110 transition dark:invert"/>
-              </a>
-            </li>
-            <li>
-              <a href="https://wa.me/243823440672" target="_blank" rel="noopener noreferrer">
-                <img src="images/whatsapp (1).png" alt="WhatsApp" class="w-6 h-6 hover:scale-110 transition dark:invert"/>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="flex-1 flex justify-center">
-        <img
-          src="images/IMG_E5630.JPG"
-          alt="Photo de Isaac Veben"
-          class="w-64 h-64 object-cover rounded-full border-4 border-transparent shadow-lg shadow-blue-500 dark:border-blue-900 hover:scale-105 transition"/>
-      </div>
-    </section>
-
-    <!-- ================= À PROPOS ================= -->
-    <section id="about" class="scroll-mt-20 max-w-6xl mx-auto px-6 py-20">
-      <div class="text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">À propos de moi</h2>
-        <p class="mt-4 text-gray-500 max-w-xl mx-auto">
-          Découvrez qui je suis, mon parcours et ce qui me motive à créer.
-        </p>
-      </div>
-
-      <div class="mt-16 flex flex-col md:flex-row items-center gap-12">
-        <div class="flex-1 flex justify-center">
-          <img
-            src="images/IMG_E5630.JPG"
-            alt="Photo de Isaac Veben"
-            class="w-56 h-56 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"/>
-        </div>
-
-        <div class="flex-1 text-center md:text-left">
-          <h3 class="text-2xl font-semibold">Développeur fullstack passionné</h3>
-
-          <p class="mt-4 text-gray-600 leading-relaxed dark:text-gray-400">
-            Je suis un développeur basé au Congo, spécialisé dans la création
-            d’interfaces web modernes, rapides et intuitives. J’aime transformer
-            des idées simples en expériences digitales efficaces.
-          </p>
-
-          <p class="mt-4 text-gray-600 leading-relaxed dark:text-gray-400">
-            Formé à Kadea Academy en développement web full-stack, je continue de
-            progresser chaque jour pour atteindre un niveau professionnel.
-          </p>
-
-          
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROJETS ================= -->
-    <section id="projects" class="scroll-mt-20 max-w-6xl mx-auto px-6 py-20">
-      <h2 class="text-3xl font-bold text-center mb-12 dark:text-blue-400">Mes projets</h2>
-
-      <!-- Les cartes sont générées en JavaScript à partir du tableau "projets" -->
-      <div id="liste-projets" class="grid md:grid-cols-3 gap-8"></div>
-    </section>
-
-    <!-- ================= CV ================= -->
-    <!-- id="cv" ajouté : c'est la cible du lien "CV" du menu -->
-    <section id="cv" class="scroll-mt-20 pt-28 pb-20 px-4">
-    
-
-      <!-- Carte CV -->
-      <div
-        class="max-w-6xl mx-auto bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-slate-800">
-        <!-- En-tête du CV -->
-        <div
-          class="bg-gradient-to-br from-blue-600 via-blue-700 to-slate-900 text-white px-8 py-10 md:px-10">
-          <div class="flex flex-col md:flex-row items-center gap-8">
-            <div class="shrink-0">
-              <img
-                src="images/IMG_E5630.JPG"
-                alt="Photo de Isaac Veben"
-                class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-4 border-white/80 shadow-xl"
-              />
-            </div>
-
-            <div class="text-center md:text-left">
-              <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Isaac Veben</h1>
-              <p class="text-blue-100 text-lg mt-2">Développeur Web Fullstack Junior</p>
-
-              <div
-                class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3 mt-6 text-sm text-blue-50">
-                <span class="flex items-center gap-2">
-                  <i data-feather="mail" class="w-4 h-4"></i>
-                  isaacveben2001@gmail.com
-                </span>
-                <span class="flex items-center gap-2">
-                  <i data-feather="phone" class="w-4 h-4"></i>
-                  +243 823 440 672
-                </span>
-                <span class="flex items-center gap-2">
-                  <i data-feather="map-pin" class="w-4 h-4"></i>
-                  Kinshasa, RDC
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contenu du CV -->
-        <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr]">
-          <!-- Barre latérale -->
-          <aside class="bg-slate-100 dark:bg-slate-800/80 p-6 md:p-8 space-y-10">
-            <!-- Compétences -->
-            <div>
-              <h2
-                class="flex items-center gap-3 text-lg font-bold text-slate-900 dark:text-white mb-5"
-              >
-                <i data-feather="code" class="w-5 h-5 text-blue-500"></i>
-                Compétences
-              </h2>
-
-              <!-- Les tuiles sont générées en JavaScript à partir du tableau "competences" (en bas de page) -->
-              <div id="liste-competences" class="grid grid-cols-3 gap-3"></div>
-            </div>
-
-            <!-- Langues -->
-            <div>
-              <h2
-                class="flex items-center gap-3 text-lg font-bold text-slate-900 dark:text-white mb-5">
-                <i data-feather="globe" class="w-5 h-5 text-blue-500"></i>
-                Langues
-              </h2>
-
-              <div class="space-y-4">
-                  <div class="flex justify-between items-center">
-                    <span>Français</span>
-                    <span class="text-sm text-slate-500 dark:text-slate-400">Compétence professionnelle</span>
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <span>Anglais</span>
-                    <span class="text-sm text-slate-500 dark:text-slate-400">Notions élémentaires</span>
-                  </div>
-                </div>
-            </div>
-
-            <!-- Qualités -->
-            <div>
-              <h2
-                class="flex items-center gap-3 text-lg font-bold text-slate-900 dark:text-white mb-5">
-                <i data-feather="heart" class="w-5 h-5 text-blue-500"></i>
-                Qualités
-              </h2>
-
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-700 text-sm">Adaptabilité</span>
-                <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-700 text-sm">Ponctualité</span>
-                <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-700 text-sm">Autonomie</span>
-                <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-700 text-sm">Créativité</span>
-              </div>
-            </div>
-
-            <!-- Réseaux -->
-            <div>
-              <h2
-                class="flex items-center gap-3 text-lg font-bold text-slate-900 dark:text-white mb-5">
-                <i data-feather="link" class="w-5 h-5 text-blue-500"></i>
-                Réseaux
-              </h2>
-
-              <div class="flex items-center gap-4">
-                <a
-                  href="https://github.com/veben-cmyk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  class="text-slate-500 hover:text-blue-500 transition">
-                  <i data-feather="github"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/isaac-veben-6ab4093a9/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  class="text-slate-500 hover:text-blue-500 transition">
-                  <i data-feather="linkedin"></i>
-                </a>
-                <a
-                  href="https://wa.me/243823440672"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                  class="text-slate-500 hover:text-green-500 transition">
-                  <i data-feather="message-circle"></i>
-                </a>
-              </div>
-            </div>
-          </aside>
-
-          <!-- Contenu principal -->
-          <main class="p-6 md:p-10 space-y-10">
-            <!-- Profil -->
-            <section>
-              <h2
-                class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-4">
-                <i data-feather="user" class="w-6 h-6 text-blue-500"></i>
-                Profil
-              </h2>
-              <p class="text-slate-600 dark:text-slate-300 leading-7">
-                Développeur web full-stack junior, formé à Kadea Academy. J’ai construit une application de
-                messagerie complète en temps réel, de la base de données au déploiement. Avec mon
-                parcours en dessin, en décoration d’intérieur et en vente, j’apporte un sens du design, du
-                détail et du service client à chaque projet.
-              </p>
-            </section>
-
-            <!-- Mon CV -->
-            <section>
-              <h2
-                class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-5">
-              
-                <i data-feather="file-text" class="w-6 h-6 text-blue-500"></i>
-                Mon CV
-              </h2>
-
-              <a
-                href="documents/CV_Isaac_Veben.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex items-center justify-between gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-slate-700 transition-all duration-300">
-              
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center">
-                  
-                    <i data-feather="file-text" class="text-red-500"></i>
-                  </div>
-                  <div>
-                    <h3 class="font-semibold text-slate-900 dark:text-white">
-                      CV — Isaac Veben.pdf
-                    </h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">
-                      Cliquer pour apercevoir
-                    </p>
-                  </div>
-                </div>
-                <i
-                  data-feather="eye"
-                  class="text-slate-400 group-hover:text-blue-500 transition"
-                ></i>
-              </a>
-
-              <a
-                href="documents/CV_Isaac_Veben.pdf"
-                download
-                class="inline-flex items-center gap-2 mt-4 text-blue-600 dark:text-blue-400 font-medium hover:underline">
-              
-                <i data-feather="download" class="w-4 h-4"></i>
-                Télécharger le PDF
-              </a>
-            </section>
-
-            <!-- Projets -->
-            <section>
-              
-
-              
-            </section>
-
-            <!-- Expériences -->
-            <section>
-  <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-6">
-    <i data-feather="briefcase" class="w-6 h-6 text-blue-500"></i>
-    Expériences professionnelles
-  </h2>
-
-  <div class="relative border-l-2 border-blue-500/30 ml-2 pl-7 space-y-8">
-
-
-
-    
-    <div class="relative">
-      <span class="absolute -left-[37px] top-1 w-3 h-3 bg-blue-500 rounded-full ring-4 ring-white dark:ring-slate-900"></span>
-      <h3 class="font-bold text-lg text-slate-900 dark:text-white">Artiste freelance — portraits au crayon</h3>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Depuis 2020 · Kinshasa, RDC</p>
-      <ul class="mt-2 list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300">
-        <li>Réalisation de portraits sur commande pour des particuliers</li>
-        <li>Échange avec les clients pour cadrer la demande, gérer les retours et garantir le respect des délais</li>
-        <li>Gestion autonome de projets, de la prise de brief à la livraison</li>
-      </ul>
+        <!-- Les groupes sont générés par js/main.js à partir du tableau "competences" -->
+        <div id="liste-competences" class="mt-14 grid gap-10 sm:grid-cols-3"></div>
     </div>
+    </section>
 
-    <div class="relative">
-      <span class="absolute -left-[37px] top-1 w-3 h-3 bg-blue-500 rounded-full ring-4 ring-white dark:ring-slate-900"></span>
-      <h3 class="font-bold text-lg text-slate-900 dark:text-white">Vendeur et installateur en décoration d'intérieur</h3>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">2023 à 2025 · Entreprise familiale, Kinshasa, RDC</p>
-      <ul class="mt-2 list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300">
-        <li>Conseil et vente de rideaux à une clientèle de particuliers, adaptation des propositions selon les besoins et le budget</li>
-        <li>Pose de rideaux et de papier peint chez les clients, réalisation des mesures, ajustements et finitions</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- ================= PARCOURS ================= -->
+    <section id="parcours" class="bg-surface px-5 py-28">
+    <div class="mx-auto max-w-3xl">
+        <h2 class="text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
+        Parcours.
+        </h2>
 
-            <!-- Formation -->
-            <section>
-              <h2
-                class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-6"
-              >
-                <i data-feather="book-open" class="w-6 h-6 text-blue-500"></i>
-                Formation
-              </h2>
+        <!-- Les étapes sont générées par js/main.js à partir du tableau "parcours" -->
+        <ol id="liste-parcours" class="mt-14"></ol>
 
-              <div class="relative border-l-2 border-blue-500/30 ml-2 pl-7 space-y-8">
-                <div class="relative">
-                  <span
-                    class="absolute -left-[37px] top-1 w-3 h-3 bg-blue-500 rounded-full ring-4 ring-white dark:ring-slate-900"
-                  ></span>
-                  <h3 class="font-bold text-lg text-slate-900 dark:text-white">
-                    Formation en développement web full-stack
-                  </h3>
-                  <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">janvier 2026 à octobre 2026</p>
-                  <p class="mt-1 text-slate-600 dark:text-slate-300">
-                    Kadea Academy - Kinshasa
-                  </p>
-                </div>
-
-                <div class="relative">
-                  <span
-                    class="absolute -left-[37px] top-1 w-3 h-3 bg-blue-500 rounded-full ring-4 ring-white dark:ring-slate-900"
-                  ></span>
-                  <h3 class="font-bold text-lg text-slate-900 dark:text-white">
-                    Diplôme d'État — Math-Physique
-                  </h3>
-                  <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">septembre 2013 à juillet 2019</p>
-                  <p class="mt-1 text-slate-600 dark:text-slate-300">
-                    Collège Saint Joseph — Kinshasa
-                  </p>
-                </div>
-              </div>
-            </section>
-          </main>
+        <div class="mt-10 text-center">
+        <a href="documents/CV_2026-10-29_Isaac_Veben.pdf" download
+            class="inline-flex h-11 items-center rounded-full border border-accent px-6 text-lg text-accent transition-colors hover:bg-accent hover:text-white">
+            Télécharger mon CV (PDF)
+        </a>
         </div>
-      </div>
+    </div>
     </section>
 
     <!-- ================= CONTACT ================= -->
-    <section id="contact" class="scroll-mt-20 max-w-4xl mx-auto px-6 py-20">
-      <h2 class="text-3xl font-bold text-center mb-6">Contact</h2>
-      <p class="text-center text-gray-700 mb-12 dark:text-gray-400">
-        Une idée, un projet ou une collaboration ? N'hésite pas à me contacter.
-      </p>
+<section id="contact" class="px-5 py-28">
+  <div class="mx-auto max-w-[980px]">
 
-      <div class="grid md:grid-cols-2 gap-10">
-        <!-- Formulaire -->
-        <form method="post" action="https://formspree.io/f/mdearlqe" class="space-y-6">
-          <input
-            type="text"
-            placeholder="Ton nom" name="nom"
-            class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
+    <div class="text-center">
+        <h2 class="font-display text-5xl font-bold tracking-tight sm:text-7xl">Travaillons ensemble.</h2>
+        <p class="mx-auto mt-4 max-w-xl text-xl leading-snug text-muted sm:text-2xl">
+        Un poste, une mission ou un projet ? Écrivez-moi, je réponds rapidement.
+        </p>
+    </div>
 
-          <input
-            type="email"
-            placeholder="Ton email" name="email"
-            class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" required/>
+    <div class="mt-14 grid gap-6 md:grid-cols-2">
 
-          <textarea placeholder="Ton message" name="message" rows="5" class="text-black w-full border border-gray-400 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 "required></textarea>
-
-          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-800 transition w-full">
-            Envoyer
-          </button>
+            <!-- Colonne droite : le formulaire -->
+        <form action="https://formspree.io/f/mdearlqe" method="POST"
+                class="flex flex-col gap-5 rounded-3xl bg-surface p-8">
+            <label class="flex flex-col gap-2 font-bold">
+            Nom
+            <input type="text" name="nom" required autocomplete="name" placeholder="Votre nom"
+                    class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+            </label>
+            <label class="flex flex-col gap-2 font-bold">
+            E-mail
+            <input type="email" name="email" required autocomplete="email" placeholder="vous@exemple.com"
+                    class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+            </label>
+            <label class="flex flex-col gap-2 font-bold">
+            Message
+            <textarea name="message" rows="4" required placeholder="Parlez-moi de votre projet"
+                        class="resize-y rounded-xl border border-line bg-page px-4 py-3 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"></textarea>
+            </label>
+            <button type="submit"
+                    class="mt-1 h-12 cursor-pointer rounded-full bg-accent text-lg text-white transition hover:bg-accent/90 active:scale-[0.98]">
+            Envoyer le message
+            </button>
         </form>
 
-        <!-- Infos -->
-        <div class="flex flex-col justify-center space-y-6">
-          <div>
-            <h3 class="font-semibold">Email</h3>
-            <a href="mailto:isaacveben2001@gmail.com" class="hover:text-blue-600">isaacveben2001@gmail.com</a>
-          </div>
+              <!-- Colonne gauche : les moyens de contact directs -->
+      <ul class="flex flex-col gap-3">
+        <li>
+          <a href="mailto:isaacveben2001@gmail.com"
+             class="survol-bleu group flex items-center justify-between gap-4 rounded-2xl bg-surface px-5 py-4">
+            <span>
+              <span class="block text-sm text-muted">E-mail</span>
+              <span class="block break-all text-lg font-bold">isaacveben2001@gmail.com</span>
+            </span>
+            <span aria-hidden="true" class="text-2xl text-muted transition group-hover:translate-x-1 group-hover:text-accent">›</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/243823440672" target="_blank" rel="noopener noreferrer"
+             class="survol-bleu group flex items-center justify-between gap-4 rounded-2xl bg-surface px-5 py-4">
+            <span>
+              <span class="block text-sm text-muted">WhatsApp</span>
+              <span class="block text-lg font-bold">+243 823 440 672</span>
+            </span>
+            <span aria-hidden="true" class="text-2xl text-muted transition group-hover:translate-x-1 group-hover:text-accent">›</span>
+          </a>
+        </li>
+            <div class="mt-3 flex items-center gap-4 px-1">
+        <p class="text-muted">Ailleurs sur le web</p>
+        <ul data-reseaux="github,linkedin" class="flex gap-3"></ul>
+    </div>
+      </ul>
 
-          <div>
-            <h3 class="font-semibold">Disponible pour</h3>
-            <p class="text-gray-400 text-sm">Freelance, collaborations, projets web</p>
-          </div>
-
-          <div class="flex gap-4 mt-4">
-            <a href="https://github.com/veben-cmyk" target="_blank" rel="noopener noreferrer">
-              <img src="images/github.png" alt="GitHub" class="w-8 hover:scale-110 transition dark:invert" />
-            </a>
-            <a href="https://www.linkedin.com/in/isaac-veben-6ab4093a9/" target="_blank" rel="noopener noreferrer">
-              <img src="images/linkedin.png" alt="LinkedIn" class="w-8 hover:scale-110 transition dark:invert" />
-            </a>
-            <a href="https://wa.me/243823440672" target="_blank" rel="noopener noreferrer">
-              <img src="images/whatsapp (1).png" alt="WhatsApp" class="w-8 hover:scale-110 transition dark:invert" />
-            </a>
-          </div>
         </div>
-      </div>
+    </div>
     </section>
+        
+    </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-blue-900 dark:bg-black text-gray-300 mt-20 transition-colors">
-      <div class="max-w-6xl mx-auto px-6 py-10">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="flex flex-col items-center">
-            <h2 class="text-white text-xl font-bold">Isaac Veben.</h2>
-            <p class="mt-3 text-sm text-gray-400">
-              Développeur fullstack passionné par la création d'expériences web
-              modernes et performantes.
-            </p>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <h3 class="text-white font-semibold mb-3">Navigation</h3>
-            <ul class="space-y-2 text-sm">
-              <!-- Mêmes ancres que le menu du haut -->
-              <li><a href="#accueil" class="hover:text-white transition">Accueil</a></li>
-              <li><a href="#about" class="hover:text-white transition">À propos</a></li>
-              <li><a href="#projects" class="hover:text-white transition">Projets</a></li>
-              <li><a href="#cv" class="hover:text-white transition">CV</a></li>
-              <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <h3 class="text-white font-semibold mb-3">Me contacter</h3>
-            <ul class="flex flex-row gap-4 text-sm">
-              <li>
-                <a href="https://github.com/veben-cmyk" target="_blank" rel="noopener noreferrer">
-                  <img src="images/social (1).png" alt="GitHub" class="w-6 h-6 hover:scale-110 transition dark:invert"/>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/isaac-veben-6ab4093a9/" target="_blank" rel="noopener noreferrer">
-                  <img src="images/linkedin (1).png" alt="LinkedIn" class="w-6 h-6 hover:scale-110 transition dark:invert"/>
-                </a>
-              </li>
-              <li>
-                <a href="https://wa.me/243823440672" target="_blank" rel="noopener noreferrer">
-                  <img src="images/whatsapp (2).png" alt="WhatsApp" class="w-6 h-6 hover:scale-110 transition dark:invert"/>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          class="border-t border-blue-800 dark:border-gray-800 mt-10 pt-6 text-center text-sm">
-          © 2026 by Isaac Veben
-        </div>
-      </div>
+    <footer class="border-t border-line bg-surface">
+    <div class="mx-auto flex max-w-[980px] flex-wrap justify-between gap-x-6 gap-y-2 px-5 py-6 text-sm text-muted">
+        <p>© 2026 Isaac Veben. Conçu et codé à Kinshasa.</p>
+        <p>Développeur web fullstack junior</p>
+    </div>
     </footer>
 
-    <!-- ================= SCRIPTS ================= -->
-    <!-- 1. On charge la bibliothèque Feather -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
