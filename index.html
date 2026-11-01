@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Isaac Veben · Développeur web fullstack</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
     <meta name="description" content="Portfolio d'Isaac Veben, développeur web fullstack junior à Kinshasa." />
 
     <!-- Les deux polices de Kadea Chat -->
@@ -29,32 +30,64 @@
         <header class="sticky top-0 z-50 border-b border-line bg-page/80 backdrop-blur-md">
             <nav aria-label="Navigation principale"
                     class="mx-auto flex h-13 max-w-[980px] items-center justify-between px-5">
-                <a href="#accueil" class="font-display text-lg font-semibold tracking-tight">
-                    Isaac Veben
+                <a href="#accueil"  class="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
+                    <svg viewBox="0 0 64 64" aria-hidden="true" class="size-6">
+                    <path fill="currentColor" d="M8 6H20L32 28L44 6H56L38.55 38H25.45Z"/>
+                    <path class="fill-accent" d="M27.09 41H36.91L32 50Z"/>
+                    <path class="fill-accent" d="M14 55H50V59H14Z"/>
+                    </svg>
+                    Veben
                 </a>
 
                 <ul class="flex items-center gap-6 text-sm">
-                    <li><a href="#projets" class="text-ink/70 transition-colors hover:text-ink">Projets</a></li>
-                    <li><a href="#parcours" class="text-ink/70 transition-colors hover:text-ink">Parcours</a></li>
-                    <li><a href="#contact" class="text-ink/70 transition-colors hover:text-ink">Contact</a></li>
+                    <li><a href="#projets" class="max-sm:hidden text-ink/70 transition-colors hover:text-ink">Projets</a></li>
+                    <li><a href="#parcours" class="max-sm:hidden text-ink/70 transition-colors hover:text-ink">Parcours</a></li>
+                    <li><a href="#contact" class="max-sm:hidden text-ink/70 transition-colors hover:text-ink">Contact</a></li>
                     <li>
-  <button id="bouton-theme" type="button" aria-label="Changer de thème"
-          class="survol-bleu flex size-9 cursor-pointer items-center justify-center rounded-full text-ink/70">
-    <!-- Lune : visible en mode clair -->
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-         stroke-linejoin="round" aria-hidden="true" class="size-4.5 dark:hidden">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-    <!-- Soleil : visible en mode sombre -->
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-         stroke-linejoin="round" aria-hidden="true" class="hidden size-4.5 dark:block">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-    </svg>
-  </button>
-</li>
+                        <!-- Bouton de changement de thème -->
+                        <button id="bouton-theme" type="button" aria-label="Changer de thème"
+                                class="survol-bleu flex size-9 cursor-pointer items-center justify-center rounded-full text-ink/70">
+                            <!-- Lune : visible en mode clair -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true" class="size-4.5 dark:hidden">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                            <!-- Soleil : visible en mode sombre -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true" class="hidden size-4.5 dark:block">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                            </svg>
+                        </button>
+                    </li>
+
+                    <!-- Menu mobile  -->
+                     <li class="sm:hidden">
+                        <button id="bouton-menu" type="button" class="group flex size-9 items-center justify-center rounded-full text-ink/70"
+                                aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile">
+                            <!-- Deux traits : visibles quand le menu est fermé -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                aria-hidden="true" class="size-5 group-aria-expanded:hidden">
+                            <path d="M4 9h16M4 15h16" />
+                            </svg>
+                            <!-- Croix : visible quand le menu est ouvert -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                aria-hidden="true" class="hidden size-5 group-aria-expanded:block">
+                            <path d="M6 6l12 12M18 6L6 18" />
+                            </svg>
+                        </button>
+                    </li>
                 </ul>
             </nav>
+
+            <!-- Menu mobile : caché par défaut, visible quand le bouton est activé -->
+             <div id="menu-mobile" class="hidden border-t border-line sm:hidden">
+                <ul class="mx-auto flex max-w-[980px] flex-col px-5 py-3 font-display text-2xl font-semibold">
+                    <li><a href="#projets" class="block py-3">Projets</a></li>
+                    <li><a href="#parcours" class="block py-3">Parcours</a></li>
+                    <li><a href="#contact" class="block py-3">Contact</a></li>
+                </ul>
+            </div>
         </header>
 
     <main>
@@ -274,6 +307,14 @@
 
     <!-- ================= FOOTER ================= -->
     <footer class="border-t border-line bg-surface">
+    <div class="flex flex-col items-center gap-3 pt-12 pb-4 text-ink">
+    <svg viewBox="0 0 64 64" aria-hidden="true" class="size-12">
+        <path fill="currentColor" d="M8 6H20L32 28L44 6H56L38.55 38H25.45Z"/>
+                    <path class="fill-accent" d="M27.09 41H36.91L32 50Z"/>
+                    <path class="fill-accent"/>
+    </svg>
+    <span class="font-display text-xs font-semibold uppercase tracking-[0.16em]">Veben</span>
+    </div>
     <div class="mx-auto flex max-w-[980px] flex-wrap justify-between gap-x-6 gap-y-2 px-5 py-6 text-sm text-muted">
         <p>© 2026 Isaac Veben. Conçu et codé à Kinshasa.</p>
         <p>Développeur web fullstack junior</p>

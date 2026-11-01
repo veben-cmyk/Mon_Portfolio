@@ -239,3 +239,22 @@ const observateur = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => observateur.observe(element));
 
+// ===================== MENU MOBILE =====================
+const boutonMenu = document.getElementById("bouton-menu");
+const menuMobile = document.getElementById("menu-mobile");
+
+function basculerMenu(ouvrir) {
+  boutonMenu.setAttribute("aria-expanded", ouvrir);
+  boutonMenu.setAttribute("aria-label", ouvrir ? "Fermer le menu" : "Ouvrir le menu");
+  // toggle avec un 2e argument : retire "hidden" si ouvrir est true, l'ajoute sinon
+  menuMobile.classList.toggle("hidden", !ouvrir);
+}
+
+boutonMenu.addEventListener("click", () => {
+  const estOuvert = boutonMenu.getAttribute("aria-expanded") === "true";
+  basculerMenu(!estOuvert);
+});
+
+menuMobile.querySelectorAll("a").forEach((lien) => {
+  lien.addEventListener("click", () => basculerMenu(false));
+});
