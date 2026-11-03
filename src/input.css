@@ -65,3 +65,19 @@
     transition: none;
   }
 }
+
+/* Bouton principal d'un projet : contour bleu, fond bleu pâle au survol */
+@utility bouton-contour {
+  @apply inline-flex h-11 items-center bg-accent rounded-full border border-accent px-6 text-lg text-page transition-colors ;
+  &:hover {
+    @apply bg-accent/90 text-white;
+  }
+}
+
+/* Bouton secondaire : discret au repos, même survol bleu que le reste du site */
+@utility bouton-discret {
+  @apply inline-flex h-10 items-center rounded-full bg-muted px-5 text-page ring-1 ring-transparent transition duration-200;
+  &:hover {
+    @apply bg-accent/10 text-accent ring-accent;
+  }
+}

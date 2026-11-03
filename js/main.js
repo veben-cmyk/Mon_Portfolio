@@ -12,12 +12,12 @@ const projets = [
     github: "https://github.com/veben-cmyk/youtube_clone",
   },
   {
-    titre: "Coffee Shop",
-    description: "Site vitrine pour un café, au design élégant et responsive.",
-    image: "images/projet café.png",
-    tags: ["HTML", "CSS"],
-    site: "https://veben-cmyk.github.io/coffee-shop/",
-    github: "https://github.com/veben-cmyk/coffee-shop",
+    titre: "Mini Racco",
+    description: "Raccourcisseur d'URL avec comptes, QR codes, réinitialisation du mot de passe par e-mail et espace d'administration. Hébergement gratuit : le premier chargement peut prendre jusqu'à une minute.",
+    image: "images/mini-racco.png",
+    tags: ["AdonisJS", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    site: "https://mini-racco.onrender.com",
+    github: "https://github.com/veben-cmyk/mini-racco",
   },
 ];
 
@@ -40,12 +40,10 @@ function tag(nom) {
       <div class="flex flex-wrap gap-2">
         ${projet.tags.map(tag).join("")}
       </div>
-      <div class="mt-auto flex flex-wrap gap-x-6 text-lg">
-        <a href="${projet.site}" target="_blank" rel="noopener noreferrer"
-           class="py-2 text-accent hover:underline">Voir le site ›</a>
-        <a href="${projet.github}" target="_blank" rel="noopener noreferrer"
-           class="py-2 text-accent hover:underline">Voir le code ›</a>
-      </div>
+      <div class="mt-auto flex flex-wrap gap-3">
+  <a href="${projet.site}" target="_blank" rel="noopener noreferrer" class="bouton-contour">Voir le site</a>
+  <a href="${projet.github}" target="_blank" rel="noopener noreferrer" class="bouton-discret">Voir le code</a>
+</div>
     </article>`;
 }
 
@@ -223,6 +221,43 @@ document.getElementById("bouton-theme").addEventListener("click", () => {
   localStorage.setItem("theme", estSombre ? "dark" : "light");
 });
 
+// ===================== TÉMOIGNAGES =====================
+
+// Emplacements à remplacer par de VRAIS témoignages (avec l'accord des personnes).
+// "lien" : leur profil LinkedIn, ou "" s'ils n'en ont pas.
+const temoignages = [
+  { texte: "[MODÈLE] Pendant le projet final, Isaac a construit seul toute la messagerie en temps réel de Kadea Chat. Ce qui m'a marqué, c'est qu'il ne se contente pas que ça marche : il veut comprendre pourquoi.",
+    nom: "[Prénom Nom]", role: "[Formateur, Kadea Academy]", lien: "" },
+  { texte: "[MODÈLE] Quand on bloquait sur un bug, Isaac prenait le temps d'expliquer sa logique au lieu de donner directement la solution. Travailler avec lui rendait toute l'équipe meilleure.",
+    nom: "[Prénom Nom]", role: "[Développeur, promotion 2026]", lien: "" },
+  { texte: "[MODÈLE] Isaac a écouté exactement ce que je voulais, m'a montré une esquisse avant de commencer, et a livré le portrait à la date prévue. Le résultat dépassait ce que j'imaginais.",
+    nom: "[Prénom Nom]", role: "[Client, portrait au crayon]", lien: "" },
+];
+
+function carteTemoignage(temoignage, index) {
+  // Avec un lien LinkedIn, le nom devient cliquable ; sans lien, c'est du texte simple
+  const signature = temoignage.lien
+    ? `<a href="${temoignage.lien}" target="_blank" rel="noopener noreferrer" class="font-bold hover:text-accent">${temoignage.nom}</a>`
+    : `<span class="font-bold">${temoignage.nom}</span>`;
+
+  return `
+    <figure class="reveal flex flex-col rounded-3xl bg-page p-8" style="transition-delay: ${index * 120}ms">
+      <span aria-hidden="true" class="font-display text-6xl leading-none text-accent">“</span>
+      <blockquote class="mt-2 flex-1 text-lg leading-relaxed">${temoignage.texte}</blockquote>
+      <figcaption class="mt-6 border-t border-line pt-4">
+        ${signature}
+        <p class="text-sm text-muted">${temoignage.role}</p>
+      </figcaption>
+    </figure>`;
+}
+
+// Sécurité : sans témoignage, la section entière est masquée
+if (temoignages.length === 0) {
+  document.getElementById("temoignages").hidden = true;
+} else {
+  document.getElementById("liste-temoignages").innerHTML = temoignages.map(carteTemoignage).join("");
+}
+
 // ===================== APPARITIONS AU SCROLL =====================
 // L'observateur surveille les éléments et nous prévient quand ils entrent à l'écran.
 const observateur = new IntersectionObserver(
@@ -258,3 +293,4 @@ boutonMenu.addEventListener("click", () => {
 menuMobile.querySelectorAll("a").forEach((lien) => {
   lien.addEventListener("click", () => basculerMenu(false));
 });
+

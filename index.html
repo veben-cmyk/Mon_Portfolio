@@ -140,13 +140,19 @@
                 Une messagerie en temps réel, construite de la base de données jusqu'au déploiement.
                 </p>
 
-                <div class="mt-6 flex flex-wrap justify-center gap-x-7 gap-y-2 text-lg">
-                <a href="https://two6-01-kd-dev-web-matin-c-mon-thu-kin-nfr5.onrender.com"
-                    target="_blank" rel="noopener noreferrer"
-                    class="py-2 text-accent hover:underline">Voir le site ›</a>
-                <a href="https://github.com/veben-cmyk/kadea-chat_fullstack"
-                    target="_blank" rel="noopener noreferrer"
-                    class="py-2 text-accent hover:underline">Voir le code ›</a>
+                <div class="mt-6 flex flex-col flex-wrap justify-center gap-3">
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <a href="https://two6-01-kd-dev-web-matin-c-mon-thu-kin-nfr5.onrender.com" target="_blank" rel="noopener noreferrer"
+                            class="bouton-contour">Voir le site</a>
+                        <a href="https://github.com/veben-cmyk/kadea-chat_fullstack" target="_blank" rel="noopener noreferrer"
+                            class="bouton-discret">Voir le code</a>
+                    </div>
+            
+                    
+
+                    <p class="mt-2 text-sm text-muted">
+                        Hébergement gratuit : le premier chargement peut prendre jusqu'à une minute.
+                    </p>
                 </div>
 
                 <img src="images/accueil.png" alt="Page d'accueil de Kadea Chat"
@@ -272,6 +278,69 @@
             Envoyer le message
             </button>
         </form>
+
+        <!-- ================= TÉMOIGNAGES ================= -->
+<section id="temoignages" class="bg-surface px-5 py-28">
+  <div class="mx-auto max-w-[980px]">
+    <h2 class="reveal text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
+      Ils en parlent.
+    </h2>
+
+    Les cartes sont générées par js/main.js à partir du tableau "temoignages"
+    <div id="liste-temoignages" class="mt-14 grid gap-6 md:grid-cols-3"></div>
+
+    <!-- Formulaire repliable : <details> s'ouvre et se ferme sans une ligne de JavaScript -->
+<details class="mx-auto mt-12 max-w-xl">
+  <summary class="cursor-pointer text-center text-lg text-accent hover:underline">
+    Vous avez travaillé avec moi ? Laissez un témoignage
+  </summary>
+
+  <form action="https://formspree.io/f/mdearlqe" method="POST"
+        class="mt-6 flex flex-col gap-5 rounded-3xl bg-page p-8">
+
+    <!-- Objet de l'e-mail : pour le distinguer d'un message de contact -->
+    <input type="hidden" name="_subject" value="Nouveau témoignage pour le portfolio" />
+    <!-- Piège anti-spam : invisible pour un humain, rempli par les robots -->
+    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+    <label class="flex flex-col gap-2 font-bold">
+      Nom et prénom
+      <input type="text" name="nom" required autocomplete="name"
+             class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+    </label>
+
+    <label class="flex flex-col gap-2 font-bold">
+      Comment nous connaissons-nous ?
+      <input type="text" name="role" required placeholder="Ex. : formateur à Kadea Academy, client…"
+             class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+    </label>
+
+    <label class="flex flex-col gap-2 font-bold">
+      Profil LinkedIn <span class="font-normal text-muted">(facultatif)</span>
+      <input type="url" name="linkedin" placeholder="https://www.linkedin.com/in/…"
+             class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+    </label>
+
+    <label class="flex flex-col gap-2 font-bold">
+      Votre témoignage
+      <textarea name="temoignage" rows="4" required
+                class="resize-y rounded-xl border border-line bg-page px-4 py-3 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"></textarea>
+    </label>
+
+    <!-- Accord obligatoire : sans lui, tu n'as pas le droit de publier le texte -->
+    <label class="flex items-start gap-3 text-sm">
+      <input type="checkbox" name="accord" value="oui" required class="mt-1 size-4 accent-accent" />
+      J'accepte que ce témoignage soit publié sur ce portfolio avec mon nom.
+    </label>
+
+    <button type="submit"
+            class="h-12 cursor-pointer rounded-full bg-accent-fill text-lg text-white transition hover:bg-accent-fill/90 active:scale-[0.98]">
+      Envoyer le témoignage
+    </button>
+  </form>
+</details>
+  </div>
+</section>
 
               <!-- Colonne gauche : les moyens de contact directs -->
       <ul class="flex flex-col gap-3">
