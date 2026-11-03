@@ -7,7 +7,7 @@ const projets = [
     titre: "Clone de YouTube",
     description: "Reproduction fidèle de l'interface de YouTube, responsive.",
     image: "images/youtube-clone.png",
-    tags: ["HTML", "Tailwind CSS"],
+    tags: ["HTML", "Tailwind CSS", "JavaScript"],
     site: "https://veben-cmyk.github.io/youtube_clone/",
     github: "https://github.com/veben-cmyk/youtube_clone",
   },
@@ -65,7 +65,7 @@ const competences = [
   },
   {
     groupe: "Outils et design",
-    outils: ["Git", "GitHub", "Figma", "Canva", "VS Code"],
+    outils: ["Git", "GitHub", "Figma", "Photoshop", "Canva", "VS Code"],
   },
 ];
 
@@ -102,6 +102,11 @@ const parcours = [
     periode: "2023 – 2025",
     titre: "Vendeur et installateur en décoration d'intérieur",
     details: "Entreprise familiale. Conseil client, prise de mesures, pose de rideaux et de papier peint.",
+  },
+  {
+  periode: "Septembre 2024",
+  titre: "Certificat en peinture numérique",
+  details: "ArtCore, Kinshasa. Formation certifiante en peinture numérique.",
   },
   {
     periode: "Depuis 2020",
@@ -226,12 +231,12 @@ document.getElementById("bouton-theme").addEventListener("click", () => {
 // Emplacements à remplacer par de VRAIS témoignages (avec l'accord des personnes).
 // "lien" : leur profil LinkedIn, ou "" s'ils n'en ont pas.
 const temoignages = [
-  { texte: "[MODÈLE] Pendant le projet final, Isaac a construit seul toute la messagerie en temps réel de Kadea Chat. Ce qui m'a marqué, c'est qu'il ne se contente pas que ça marche : il veut comprendre pourquoi.",
-    nom: "[Prénom Nom]", role: "[Formateur, Kadea Academy]", lien: "" },
-  { texte: "[MODÈLE] Quand on bloquait sur un bug, Isaac prenait le temps d'expliquer sa logique au lieu de donner directement la solution. Travailler avec lui rendait toute l'équipe meilleure.",
-    nom: "[Prénom Nom]", role: "[Développeur, promotion 2026]", lien: "" },
-  { texte: "[MODÈLE] Isaac a écouté exactement ce que je voulais, m'a montré une esquisse avant de commencer, et a livré le portrait à la date prévue. Le résultat dépassait ce que j'imaginais.",
-    nom: "[Prénom Nom]", role: "[Client, portrait au crayon]", lien: "" },
+  // { texte: "[MODÈLE] Pendant le projet final, Isaac a construit seul toute la messagerie en temps réel de Kadea Chat. Ce qui m'a marqué, c'est qu'il ne se contente pas que ça marche : il veut comprendre pourquoi.",
+  //   nom: "[Prénom Nom]", role: "[Formateur, Kadea Academy]", lien: "" },
+  // { texte: "[MODÈLE] Quand on bloquait sur un bug, Isaac prenait le temps d'expliquer sa logique au lieu de donner directement la solution. Travailler avec lui rendait toute l'équipe meilleure.",
+  //   nom: "[Prénom Nom]", role: "[Développeur, promotion 2026]", lien: "" },
+  // { texte: "[MODÈLE] Isaac a écouté exactement ce que je voulais, m'a montré une esquisse avant de commencer, et a livré le portrait à la date prévue. Le résultat dépassait ce que j'imaginais.",
+  //   nom: "[Prénom Nom]", role: "[Client, portrait au crayon]", lien: "" },
 ];
 
 function carteTemoignage(temoignage, index) {
@@ -241,7 +246,7 @@ function carteTemoignage(temoignage, index) {
     : `<span class="font-bold">${temoignage.nom}</span>`;
 
   return `
-    <figure class="reveal flex flex-col rounded-3xl bg-page p-8" style="transition-delay: ${index * 120}ms">
+    <figure class="reveal flex flex-col rounded-3xl bg-surface p-8" style="transition-delay: ${index * 120}ms">
       <span aria-hidden="true" class="font-display text-6xl leading-none text-accent">“</span>
       <blockquote class="mt-2 flex-1 text-lg leading-relaxed">${temoignage.texte}</blockquote>
       <figcaption class="mt-6 border-t border-line pt-4">

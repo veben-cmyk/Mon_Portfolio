@@ -95,35 +95,34 @@
         <section id="accueil"
                 class="mx-auto flex max-w-[980px] flex-col items-center px-5 pt-28 pb-32 text-center">
 
-        <img src="images/jadenV.JPG" alt="Portrait d'Isaac Veben"
-            width="120" height="120"
-            class="size-30 rounded-full object-cover reveal"/>
+            <img src="images/jadenV.JPG" alt="Portrait d'Isaac Veben"
+                width="120" height="120"
+                class="size-30 rounded-full object-cover reveal"/>
 
-        <p class="mt-8 text-lg font-bold text-muted">Bonjour, je suis</p>
+            <p class="mt-8 text-lg font-bold text-muted">Bonjour, je suis</p>
 
-<h1 class="mt-2 font-display text-5xl font-bold leading-none tracking-tight sm:text-7xl md:text-8xl">
-  Isaac Veben
-</h1>
+            <h1 class="mt-2 font-display text-5xl font-bold leading-none tracking-tight sm:text-7xl md:text-8xl">
+                Isaac Veben
+            </h1>
 
-<p class="mt-4 font-display text-2xl font-bold tracking-tight text-accent sm:text-4xl">
-  Du crayon au code.
-</p>
+            <p class="mt-4 font-display text-2xl font-bold tracking-tight text-accent sm:text-4xl">
+                Du crayon au code.
+            </p>
 
-<p class="mt-6 max-w-xl text-xl leading-snug text-muted sm:text-2xl">
-  Développeur web fullstack à Kinshasa, je conçois et je construis des applications
-  claires, rapides et soignées, avec l'œil de quelqu'un qui dessine depuis toujours.
-</p>
+            <p class="mt-6 max-w-xl text-xl leading-snug text-muted sm:text-2xl">
+                Développeur web fullstack à Kinshasa, je conçois et je construis des applications
+                claires, rapides et soignées, avec l'œil de quelqu'un qui dessine depuis toujours.
+            </p>
 
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
-            <a href="#projets"
-            class="inline-flex h-11 items-center rounded-full bg-accent px-6 text-lg text-white transition-colors hover:bg-accent/90">
-            Voir mes projets
-            </a>
-            <a href="#contact" class="py-3 text-lg text-accent hover:underline">
-            Me contacter ›
-            </a>
-        </div>
-        <ul data-reseaux="github,linkedin,whatsapp" class="mt-8 flex gap-3"></ul>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+                <a href="#projets" class="inline-flex h-11 items-center rounded-full bg-accent px-6 text-lg text-white transition-colors hover:bg-accent/90">
+                    Voir mes projets
+                </a>
+                <a href="#contact" class="py-3 text-lg text-accent hover:underline">
+                    Me contacter ›
+                </a>
+            </div>
+            <ul data-reseaux="github,linkedin,whatsapp" class="mt-8 flex gap-3"></ul>
         </section> 
 
         <!-- ================= PROJET PHARE ================= -->
@@ -213,166 +212,173 @@
 
         <!-- ================= BOÎTE À OUTILS ================= -->
     <section class="px-5 py-28">
-    <div class="mx-auto max-w-[980px]">
-        <h2 class="text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
-        Ma boîte à outils.
-        </h2>
+        <div class="mx-auto max-w-[980px]">
+            <h2 class="text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
+                Ma boîte à outils.
+            </h2>
 
-        <!-- Les groupes sont générés par js/main.js à partir du tableau "competences" -->
-        <div id="liste-competences" class="mt-14 grid gap-10 sm:grid-cols-3"></div>
-    </div>
+            <!-- Les groupes sont générés par js/main.js à partir du tableau "competences" -->
+            <div id="liste-competences" class="mt-14 grid gap-10 sm:grid-cols-3"></div>
+        </div>
     </section>
 
     <!-- ================= PARCOURS ================= -->
     <section id="parcours" class="bg-surface px-5 py-28">
-    <div class="mx-auto max-w-3xl">
-        <h2 class="text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
-        Parcours.
-        </h2>
+        <div class="mx-auto max-w-3xl">
+            <h2 class="text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
+            Parcours.
+            </h2>
 
-        <!-- Les étapes sont générées par js/main.js à partir du tableau "parcours" -->
-        <ol id="liste-parcours" class="mt-14"></ol>
+            <!-- Les étapes sont générées par js/main.js à partir du tableau "parcours" -->
+            <ol id="liste-parcours" class="mt-14"></ol>
 
-        <div class="mt-10 text-center">
-        <a href="documents/CV_2026-10-29_Isaac_Veben.pdf" download
-            class="inline-flex h-11 items-center rounded-full border border-accent px-6 text-lg text-accent transition-colors hover:bg-accent hover:text-white">
-            Télécharger mon CV (PDF)
-        </a>
+            <div class="mt-10 text-center">
+                <a href="documents/CV_2026-10-29_Isaac_Veben.pdf" download
+                    class="inline-flex h-11 items-center rounded-full border border-accent px-6 text-lg text-accent transition-colors hover:bg-accent hover:text-white">
+                    Télécharger mon CV (PDF)
+                </a>
+            </div>
         </div>
-    </div>
     </section>
 
+    <!-- ================= TÉMOIGNAGES ================= -->
+    <section id="temoignages" class="px-5 py-28">
+        <div class="mx-auto max-w-[980px]">
+            <h2 class="reveal text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
+                Ils en parlent.
+            </h2>
+
+            <!-- Les cartes sont générées par js/main.js à partir du tableau "temoignages" -->
+            <div id="liste-temoignages" class="mt-14 grid gap-6 md:grid-cols-3"></div>
+
+            <!-- Formulaire repliable : <details> s'ouvre et se ferme sans une ligne de JavaScript -->
+            <details class="mx-auto mt-12 max-w-xl">
+                <summary class="cursor-pointer text-center text-lg text-accent hover:underline">
+                    Vous avez travaillé avec moi ? Laissez un témoignage
+                </summary>
+
+                <form action="https://formspree.io/f/mdearlqe" method="POST" class="mt-6 flex flex-col gap-5 rounded-3xl bg-page p-8">
+
+                    <!-- Objet de l'e-mail : pour le distinguer d'un message de contact -->
+                    <input type="hidden" name="_subject" value="Nouveau témoignage pour le portfolio" />
+                    <!-- Piège anti-spam : invisible pour un humain, rempli par les robots -->
+                    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+                    <label class="flex flex-col gap-2 font-bold">
+                    Nom et prénom
+                    <input type="text" name="nom" required autocomplete="name"
+                            class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+                    </label>
+
+                    <label class="flex flex-col gap-2 font-bold">
+                    Comment nous connaissons-nous ?
+                    <input type="text" name="role" required placeholder="Ex. : formateur à Kadea Academy, client…"
+                            class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+                    </label>
+
+                    <label class="flex flex-col gap-2 font-bold">
+                    Profil LinkedIn <span class="font-normal text-muted">(facultatif)</span>
+                    <input type="url" name="linkedin" placeholder="https://www.linkedin.com/in/…"
+                            class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+                    </label>
+
+                    <label class="flex flex-col gap-2 font-bold">
+                    Votre témoignage
+                    <textarea name="temoignage" rows="4" required
+                                class="resize-y rounded-xl border border-line bg-page px-4 py-3 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"></textarea>
+                    </label>
+
+                    <!-- Accord obligatoire : sans lui, tu n'as pas le droit de publier le texte -->
+                    <label class="flex items-start gap-3 text-sm">
+                    <input type="checkbox" name="accord" value="oui" required class="mt-1 size-4 accent-accent" />
+                    J'accepte que ce témoignage soit publié sur ce portfolio avec mon nom.
+                    </label>
+
+                    <button type="submit"
+                            class="h-12 cursor-pointer rounded-full bg-accent-fill text-lg text-white transition hover:bg-accent-fill/90 active:scale-[0.98]">
+                    Envoyer le témoignage
+                    </button>
+                </form>
+            </details>
+        </div>
+    </section>
+
+
+
+   
+
+    
     <!-- ================= CONTACT ================= -->
 <section id="contact" class="px-5 py-28">
   <div class="mx-auto max-w-[980px]">
 
     <div class="text-center">
-        <h2 class="font-display text-5xl font-bold tracking-tight sm:text-7xl">Travaillons ensemble.</h2>
-        <p class="mx-auto mt-4 max-w-xl text-xl leading-snug text-muted sm:text-2xl">
+      <h2 class="font-display text-5xl font-bold tracking-tight sm:text-7xl">Travaillons ensemble.</h2>
+      <p class="mx-auto mt-4 max-w-xl text-xl leading-snug text-muted sm:text-2xl">
         Un poste, une mission ou un projet ? Écrivez-moi, je réponds rapidement.
-        </p>
+      </p>
     </div>
 
     <div class="mt-14 grid gap-6 md:grid-cols-2">
 
-            <!-- Colonne droite : le formulaire -->
-        <form action="https://formspree.io/f/mdearlqe" method="POST"
-                class="flex flex-col gap-5 rounded-3xl bg-surface p-8">
-            <label class="flex flex-col gap-2 font-bold">
-            Nom
-            <input type="text" name="nom" required autocomplete="name" placeholder="Votre nom"
-                    class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
-            </label>
-            <label class="flex flex-col gap-2 font-bold">
-            E-mail
-            <input type="email" name="email" required autocomplete="email" placeholder="vous@exemple.com"
-                    class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
-            </label>
-            <label class="flex flex-col gap-2 font-bold">
-            Message
-            <textarea name="message" rows="4" required placeholder="Parlez-moi de votre projet"
-                        class="resize-y rounded-xl border border-line bg-page px-4 py-3 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"></textarea>
-            </label>
-            <button type="submit"
-                    class="mt-1 h-12 cursor-pointer rounded-full bg-accent text-lg text-white transition hover:bg-accent/90 active:scale-[0.98]">
-            Envoyer le message
-            </button>
-        </form>
+      <!-- Colonne gauche : le formulaire -->
+      <form action="https://formspree.io/f/mdearlqe" method="POST"
+            class="flex flex-col gap-5 rounded-3xl bg-surface p-8">
+        <label class="flex flex-col gap-2 font-bold">
+          Nom
+          <input type="text" name="nom" required autocomplete="name" placeholder="Votre nom"
+                 class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+        </label>
+        <label class="flex flex-col gap-2 font-bold">
+          E-mail
+          <input type="email" name="email" required autocomplete="email" placeholder="vous@exemple.com"
+                 class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
+        </label>
+        <label class="flex flex-col gap-2 font-bold">
+          Message
+          <textarea name="message" rows="4" required placeholder="Parlez-moi de votre projet"
+                    class="resize-y rounded-xl border border-line bg-page px-4 py-3 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"></textarea>
+        </label>
+        <button type="submit"
+                class="mt-1 h-12 cursor-pointer rounded-full bg-accent-fill text-lg text-white transition hover:bg-accent-fill/90 active:scale-[0.98]">
+          Envoyer le message
+        </button>
+      </form>
 
-        <!-- ================= TÉMOIGNAGES ================= -->
-<section id="temoignages" class="bg-surface px-5 py-28">
-  <div class="mx-auto max-w-[980px]">
-    <h2 class="reveal text-center font-display text-4xl font-bold tracking-tight sm:text-6xl">
-      Ils en parlent.
-    </h2>
+      <!-- Colonne droite : une div regroupe la liste ET les réseaux -->
+      <div>
+        <ul class="flex flex-col gap-3">
+          <li>
+            <a href="mailto:isaacveben2001@gmail.com"
+               class="survol-bleu group flex items-center justify-between gap-4 rounded-2xl bg-surface px-5 py-4">
+              <span>
+                <span class="block text-sm text-muted">E-mail</span>
+                <span class="block break-all text-lg font-bold">isaacveben2001@gmail.com</span>
+              </span>
+              <span aria-hidden="true" class="text-2xl text-muted transition group-hover:translate-x-1 group-hover:text-accent">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/243823440672" target="_blank" rel="noopener noreferrer"
+               class="survol-bleu group flex items-center justify-between gap-4 rounded-2xl bg-surface px-5 py-4">
+              <span>
+                <span class="block text-sm text-muted">WhatsApp</span>
+                <span class="block text-lg font-bold">+243 823 440 672</span>
+              </span>
+              <span aria-hidden="true" class="text-2xl text-muted transition group-hover:translate-x-1 group-hover:text-accent">›</span>
+            </a>
+          </li>
+        </ul>
 
-    Les cartes sont générées par js/main.js à partir du tableau "temoignages"
-    <div id="liste-temoignages" class="mt-14 grid gap-6 md:grid-cols-3"></div>
+        <div class="mt-3 flex items-center gap-4 px-1">
+          <p class="text-muted">Ailleurs sur le web</p>
+          <ul data-reseaux="github,linkedin" class="flex gap-3"></ul>
+        </div>
+      </div>
 
-    <!-- Formulaire repliable : <details> s'ouvre et se ferme sans une ligne de JavaScript -->
-<details class="mx-auto mt-12 max-w-xl">
-  <summary class="cursor-pointer text-center text-lg text-accent hover:underline">
-    Vous avez travaillé avec moi ? Laissez un témoignage
-  </summary>
-
-  <form action="https://formspree.io/f/mdearlqe" method="POST"
-        class="mt-6 flex flex-col gap-5 rounded-3xl bg-page p-8">
-
-    <!-- Objet de l'e-mail : pour le distinguer d'un message de contact -->
-    <input type="hidden" name="_subject" value="Nouveau témoignage pour le portfolio" />
-    <!-- Piège anti-spam : invisible pour un humain, rempli par les robots -->
-    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-
-    <label class="flex flex-col gap-2 font-bold">
-      Nom et prénom
-      <input type="text" name="nom" required autocomplete="name"
-             class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
-    </label>
-
-    <label class="flex flex-col gap-2 font-bold">
-      Comment nous connaissons-nous ?
-      <input type="text" name="role" required placeholder="Ex. : formateur à Kadea Academy, client…"
-             class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
-    </label>
-
-    <label class="flex flex-col gap-2 font-bold">
-      Profil LinkedIn <span class="font-normal text-muted">(facultatif)</span>
-      <input type="url" name="linkedin" placeholder="https://www.linkedin.com/in/…"
-             class="h-12 rounded-xl border border-line bg-page px-4 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15" />
-    </label>
-
-    <label class="flex flex-col gap-2 font-bold">
-      Votre témoignage
-      <textarea name="temoignage" rows="4" required
-                class="resize-y rounded-xl border border-line bg-page px-4 py-3 font-normal outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"></textarea>
-    </label>
-
-    <!-- Accord obligatoire : sans lui, tu n'as pas le droit de publier le texte -->
-    <label class="flex items-start gap-3 text-sm">
-      <input type="checkbox" name="accord" value="oui" required class="mt-1 size-4 accent-accent" />
-      J'accepte que ce témoignage soit publié sur ce portfolio avec mon nom.
-    </label>
-
-    <button type="submit"
-            class="h-12 cursor-pointer rounded-full bg-accent-fill text-lg text-white transition hover:bg-accent-fill/90 active:scale-[0.98]">
-      Envoyer le témoignage
-    </button>
-  </form>
-</details>
+    </div>
   </div>
 </section>
-
-              <!-- Colonne gauche : les moyens de contact directs -->
-      <ul class="flex flex-col gap-3">
-        <li>
-          <a href="mailto:isaacveben2001@gmail.com"
-             class="survol-bleu group flex items-center justify-between gap-4 rounded-2xl bg-surface px-5 py-4">
-            <span>
-              <span class="block text-sm text-muted">E-mail</span>
-              <span class="block break-all text-lg font-bold">isaacveben2001@gmail.com</span>
-            </span>
-            <span aria-hidden="true" class="text-2xl text-muted transition group-hover:translate-x-1 group-hover:text-accent">›</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://wa.me/243823440672" target="_blank" rel="noopener noreferrer"
-             class="survol-bleu group flex items-center justify-between gap-4 rounded-2xl bg-surface px-5 py-4">
-            <span>
-              <span class="block text-sm text-muted">WhatsApp</span>
-              <span class="block text-lg font-bold">+243 823 440 672</span>
-            </span>
-            <span aria-hidden="true" class="text-2xl text-muted transition group-hover:translate-x-1 group-hover:text-accent">›</span>
-          </a>
-        </li>
-            <div class="mt-3 flex items-center gap-4 px-1">
-        <p class="text-muted">Ailleurs sur le web</p>
-        <ul data-reseaux="github,linkedin" class="flex gap-3"></ul>
-    </div>
-      </ul>
-
-        </div>
-    </div>
-    </section>
         
     </main>
 
@@ -382,7 +388,7 @@
     <svg viewBox="0 0 64 64" aria-hidden="true" class="size-12">
         <path fill="currentColor" d="M8 6H20L32 28L44 6H56L38.55 38H25.45Z"/>
                     <path class="fill-accent" d="M27.09 41H36.91L32 50Z"/>
-                    <path class="fill-accent"/>
+                    <path class="fill-accent" d="M14 55H50V59H14Z"/>
     </svg>
     <span class="font-display text-xs font-semibold uppercase tracking-[0.16em]">Veben</span>
     </div>
