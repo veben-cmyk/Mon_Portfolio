@@ -231,12 +231,18 @@ document.getElementById("bouton-theme").addEventListener("click", () => {
 // Emplacements à remplacer par de VRAIS témoignages (avec l'accord des personnes).
 // "lien" : leur profil LinkedIn, ou "" s'ils n'en ont pas.
 const temoignages = [
-  // { texte: "[MODÈLE] Pendant le projet final, Isaac a construit seul toute la messagerie en temps réel de Kadea Chat. Ce qui m'a marqué, c'est qu'il ne se contente pas que ça marche : il veut comprendre pourquoi.",
-  //   nom: "[Prénom Nom]", role: "[Formateur, Kadea Academy]", lien: "" },
-  // { texte: "[MODÈLE] Quand on bloquait sur un bug, Isaac prenait le temps d'expliquer sa logique au lieu de donner directement la solution. Travailler avec lui rendait toute l'équipe meilleure.",
-  //   nom: "[Prénom Nom]", role: "[Développeur, promotion 2026]", lien: "" },
-  // { texte: "[MODÈLE] Isaac a écouté exactement ce que je voulais, m'a montré une esquisse avant de commencer, et a livré le portrait à la date prévue. Le résultat dépassait ce que j'imaginais.",
-  //   nom: "[Prénom Nom]", role: "[Client, portrait au crayon]", lien: "" },
+   {
+    texte: "Soucieux d'un résultat irréprochable et d'un travail accompli au millimètre près, Veben est le développeur vers qui l'on se tourne lorsque l'on a un projet exigeant. […] Au-delà de ses compétences techniques, c'est son agilité d'esprit, son humilité face aux difficultés et sa volonté constante de s'améliorer qui m'ont le plus marqué lors de notre formation.",
+    nom: "Joel Mitondo",
+    role: "Camarade de formation, Kadea Academy",
+    lien: "https://vraimonportfolio.onrender.com/",
+  },
+  {
+    texte: "J'ai eu le privilège de bénéficier de son travail à deux reprises, la dernière fois en 2024. […] Ayant connu ses débuts, je peux témoigner du chemin parcouru, de sa progression et de la maîtrise qu'il a développée au fil des années.",
+    nom: "Jireh Dianda",
+    role: "Chantre et pianiste, ami depuis le collège",
+    lien: "https://www.youtube.com/@jirehdiandaofficiel10",
+  },
 ];
 
 function carteTemoignage(temoignage, index) {
