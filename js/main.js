@@ -231,7 +231,7 @@ document.getElementById("bouton-theme").addEventListener("click", () => {
 // Emplacements à remplacer par de VRAIS témoignages (avec l'accord des personnes).
 // "lien" : leur profil LinkedIn, ou "" s'ils n'en ont pas.
 const temoignages = [
-   {
+  {
     texte: "Soucieux d'un résultat irréprochable et d'un travail accompli au millimètre près, Veben est le développeur vers qui l'on se tourne lorsque l'on a un projet exigeant. […] Au-delà de ses compétences techniques, c'est son agilité d'esprit, son humilité face aux difficultés et sa volonté constante de s'améliorer qui m'ont le plus marqué lors de notre formation.",
     nom: "Joel Mitondo",
     role: "Camarade de formation, Kadea Academy",
@@ -242,6 +242,7 @@ const temoignages = [
     nom: "Jireh Dianda",
     role: "Chantre et pianiste, ami depuis le collège",
     lien: "https://www.youtube.com/@jirehdiandaofficiel10",
+    Lien: "https://www.youtube.com/@jirehdiandaofficiel10",
   },
 ];
 
