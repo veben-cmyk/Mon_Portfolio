@@ -6,7 +6,7 @@ const projets = [
   {
     titre: "Clone de YouTube",
     description: "Reproduction fidèle de l'interface de YouTube, responsive.",
-    image: "images/youtube-clone.png",
+    image: "images/youtube-clone.jpg",
     tags: ["HTML", "Tailwind CSS", "JavaScript"],
     site: "https://veben-cmyk.github.io/youtube_clone/",
     github: "https://github.com/veben-cmyk/youtube_clone",
